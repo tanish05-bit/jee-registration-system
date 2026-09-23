@@ -1,0 +1,12 @@
+# JEE Exam Registration System — Dependencies
+#
+# This project uses only the Python Standard Library.
+# No third-party packages are required.
+#
+# Standard library modules used:
+#   sqlite   - local database (jee.db)
+#   hashlib  - SHA-256 password hashing
+#   random   - application number generation, mock exam center numbers
+#   os       - resolving the database file path
+#
+# Requirement: Python 3.8+
