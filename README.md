@@ -42,18 +42,14 @@ The project is organized as small, single-responsibility modules — database se
 
 1. Clone the repo:
    ```
-   git clone <your-repo-url>
-   cd <repo-folder>
+   git clone https://github.com/tanish05-bit/jee-registration-system.git
+   cd jee-registration-system
    ```
 2. Make sure you have Python 3.8+:
    ```
    python --version
    ```
-3. No external dependencies are required (see `requirements.txt`). If you'd like, you can still create a virtual environment:
-   ```
-   python -m venv venv
-   source venv/bin/activate   # Windows: venv\Scripts\activate
-   ```
+3. No external dependencies are required. The project uses Python's built-in libraries and SQLite, so no `pip install` is needed.
 4. Run it:
    ```
    python main.py
