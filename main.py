@@ -23,22 +23,20 @@ def main():
             print("Sorry! Invalid Choice")
             continue
 
-        if hello ==1:
+        if hello==1:
             register()
-        elif hello ==2:
+        elif hello==2:
             records()
-        elif hello ==3:
+        elif hello==3:
             search()
-        elif hello ==4:
+        elif hello==4:
             update()
-        elif hello ==5:
+        elif hello==5:
             delete()
-        elif hello ==6:
+        elif hello==6:
             login()
-        elif hello ==7:
+        elif hello==7:
             break
         else:
             print("Sorry! Invalid Choice")
-
-if __name__ =="__main__":
-    main()
+main()
