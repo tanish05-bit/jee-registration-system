@@ -20,6 +20,6 @@ def init_db():
                  (10000004, "Ananya Iyer", "Lakshmi Iyer", "Venkat Iyer", "2006-05-30", "EWS", "F","567890123456", "ananya.iyer@proton.me", "9012345678", "22 Anna Nagar", "Chennai","Tamil Nadu", "600040", "B.Planning", "Chennai", "Ananya@104"),
                  (10000005, "Mohit Jatav", "Rekha Jatav", "Suresh Jatav", "2007-01-09", "SC", "M","678901234567", "mohit.jatav@vitbhopal.ac.in", "8899001122", "5 Gandhi Nagar", "Lucknow","Uttar Pradesh", "226001", "B.Tech", "Lucknow", "Mohit@105"),]
     for record in set_records:
-        cur.execute("insert or ignore into Register values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",rec[:16] + (hash_pw(rec[16]),))
+        cur.execute("insert or ignore into Register values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",record[:16] + (hash_pw(record[16]),))
     conn.commit() #makes the changes permanent
     conn.close()
