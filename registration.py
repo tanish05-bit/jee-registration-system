@@ -8,7 +8,7 @@ def generate_app_no(cur):
     #one that's not already used (App_no is the primary key).
     while True:
         app_no=random.randint(10000000, 99999999)
-        cur.execute("select App_no from Register where App_no=?", (app_no,))
+        cur.execute("select App_no from Register where App_no=?",(app_no,))
         if cur.fetchone() is None:
             return app_no
 
@@ -18,7 +18,7 @@ def register():
     cur=conn.cursor()
 
     print("Your Application Number is Computer Generated")
-    a = generate_app_no(cur)
+    a=generate_app_no(cur)
     print("Your Application Number is:", a)
 
     b=input("Candidate's Name: ")
@@ -83,10 +83,7 @@ def register():
 
     try:
         #iMPORTANT NOTE_ --> ? placeholders keep this safe from SQL injection
-        cur.execute(
-            "insert into Register values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-            (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, hashed)
-        )
+        cur.execute("insert into Register values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, hashed))
         conn.commit()
         print("Congratulations! Registration Successful")
         print("Your Application Number is -->", a)
@@ -240,13 +237,12 @@ def delete():
     while True:
         del_record=input("Enter Application Number To Delete: ")
         if del_record.isdigit():
-            del_record = int(del_record)
+            del_record=int(del_record)
             break
         print("Digits only!")
 
     pw=input("Enter Password: ")
-    cur.execute("select * from Register where App_no=? and Password_=?",
-                (del_record, hash_pw(pw)))
+    cur.execute("select * from Register where App_no=? and Password_=?",(del_record, hash_pw(pw)))
     check = cur.fetchone()
 
     if check:
