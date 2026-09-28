@@ -57,6 +57,18 @@ The project is organized as small, single-responsibility modules — database se
 
 `jee.db` is created automatically on first run and is git-ignored, so everyone who clones the repo starts with a clean database.
 
+## Predefined Test Records
+
+Five sample candidates are inserted automatically into `jee.db` the first time the program runs (they are never duplicated on later runs). Use these credentials to try Search, Update, Delete, and Login without registering first:
+
+| Application Number | Candidate | Password |
+|---|---|---|
+| 10000001 | Aarav Sharma | `Aarav@101` |
+| 10000002 | Priya Verma | `Priya@102` |
+| 10000003 | Rohan Meena | `Rohan@103` |
+| 10000004 | Ananya Iyer | `Ananya@104` |
+| 10000005 | Mohit Jatav | `Mohit@105` |
+
 ## Instructions for Testing
 
 Since this is an interactive CLI, testing is manual — run `python main.py` and exercise each menu option:
@@ -68,4 +80,5 @@ Since this is an interactive CLI, testing is manual — run `python main.py` and
 5. **Delete (5)** — authenticate and delete a record; confirm it no longer appears in Search or All Records.
 6. **Login (6)** — log in with valid Application Number + password and confirm exam details (paper, city, date, mock center) are displayed correctly.
 7. **Exit (7)** — confirm the program terminates cleanly.
+
 
